@@ -112,7 +112,7 @@ if __name__ == "__main__":
             # Time delay
             i += 1
             prob = random.randint(0, 100)
-            human_time = 4 + random.randint(0, 60 if prob < 10 else 3)
+            human_time = 5 + random.randint(0, 60 if prob < 10 else 5)
             print(
                 f"\tSleeping for {human_time} seconds... [{i}/{total}: {100 * (i) / total:.0f}%] ({time.time() - program_start_time:.0f}s)"
             )
