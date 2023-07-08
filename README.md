@@ -12,7 +12,7 @@ This crawler is designed for the Korean coding problem platform, [BOJ (Baekjoon 
   - 많은 학생이나 많은 문제를 한꺼번에 요청하여 서버에 부하를 주는 행위
   - 모르는 사람의 아이디를 입력하여 스토킹하는 행위
   - 기타 사람의 시간당 서버요청에 비해 많은 요청을 하는 행위
-  - 기타 타인의 피해를 입히는 행위
+  - 기타 타인에게 피해를 입히는 행위
 
 ## 사용법
 
