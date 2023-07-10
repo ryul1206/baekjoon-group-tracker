@@ -60,7 +60,11 @@ def process_row(row, headers) -> Dict:
                 # data-timestamp="1688751647"
                 # => "2023년 7월 8일 02:40:47"
                 epoch = data[index].find("a")["data-timestamp"]
-                result["제출한 시간"] = time.strftime("%Y년 %m월 %d일 %H:%M:%S", time.localtime(int(epoch)))
+                result["제출한 시간"] = (
+                    time.strftime("%Y년 %m월 %d일 %H:%M:%S".encode("unicode-escape").decode(), time.localtime(int(epoch)))
+                    .encode()
+                    .decode("unicode-escape")
+                )
 
             else:
                 result[headers[index]] = data[index].text.strip()
@@ -78,7 +82,7 @@ def clean_fname(fname: str):
 
 if __name__ == "__main__":
     program_start_time = time.time()
-    time_string = time.strftime('%Y%m%d_%H%M%S', time.localtime())
+    time_string = time.strftime("%Y%m%d_%H%M%S", time.localtime())
 
     # Parse arguments
     parser = argparse.ArgumentParser(description="BOJ Crawler")
@@ -121,6 +125,7 @@ if __name__ == "__main__":
 
     # DEBUG
     import pickle
+
     DEBUG_LOGGER_PATH = os.path.join("temp", f"logger_{time_string}.pkl")
     # DEBUG: Save as pickle file
     with open(DEBUG_LOGGER_PATH, "wb") as f:

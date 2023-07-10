@@ -49,5 +49,6 @@ python3 crawler.py query.yaml -o ./folder/week1.html
 ## 필요 라이브러리
 
 ```sh
-pip install beautifulsoup4
+pip3 install beautifulsoup4
+pip3 install pyyaml
 ```
