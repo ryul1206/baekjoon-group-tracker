@@ -129,7 +129,8 @@ class Logger:
         # print(f"summary: {self.summary[uid]}")
         if self.summary[uid][pid] == "🟢":
             return
-        if result == "맞았습니다!!":
+        if result in ("맞았습니다!!", "100점"):
             self.summary[uid][pid] = "🟢"
         else:
+            print(result)
             self.summary[uid][pid] = "🔶"
